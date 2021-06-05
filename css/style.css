@@ -125,6 +125,25 @@ body{
         transform: translate(0);
     }
 }
+@keyframes moveInBottom {
+    /* We can specify what I want to happen in each moment of time of the animation.
+    So we start with 0% which is before the animation actually starts.
+    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+
+    0% { /* animation start // initial state*/
+        opacity: 0;
+        transform: translateY(30px); /*So a positive value means it goes to the right, and negative value means it goes to the left.*/
+    }
+    80% {
+        transform:translateY(-10px);
+    }
+
+    100% {  /* animation finish // final state*/
+        opacity:1;
+        transform: translate(0);
+    }
+}
+
 
 .btn:link,
 .btn:visited {
@@ -134,6 +153,7 @@ body{
     display: inline-block;
     border-radius: 100px;
     transition: all .2s ; /*geçiş*/
+    position:relative;
 }
 
 .btn:hover{
@@ -147,4 +167,27 @@ body{
 .btn-white {
     background-color:#fff;
     color:#777;
+}
+.btn::after{ /*behave like btn child*/
+    content:""; /*  We have to specify it. Otherwise it's not going to appear. */
+    display:inline-block;
+    height:100%; /* exact same dimensions with btn if we set it to 100%*/
+    width:100%;
+    border-radius:100px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1; /*So remember the z index defines the position  of the elements if they are one on top of another. And so this one has minus one and so it's definitely behind the button.*/
+    transition:all .4s;
+}
+.btn-white::after{
+    background-color:#fff;
+}
+.btn:hover::after{ /*So this is an after pseudo-element only when we have the button on the hover state.*/
+    transform:scaleX(1.4) scaleY(1.6);
+    opacity:0;
+}
+.btn-animated{
+    animation:moveInBottom .5s ease-out .5s ;
+    animation-fill-mode: backwards;
 }
