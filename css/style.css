@@ -45,18 +45,18 @@ body{
     clip-path:polygon(0 0 , 100% 0, 100% 75%,0 100%); /* clock-wise*/
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top:4rem;
     left: 4rem;
     
 }
-.logo {
+.header__logo {
     height: 3.5rem;
 
 }
 
-.text-box{
+.header__text-box{
     position:absolute;
     top:40%;
     left:50%;
@@ -73,7 +73,7 @@ body{
     backface-visibility: hidden;  
     margin-bottom: 6rem;
 }
-.heading-primary-main{
+.heading-primary--main{
     display: block;
     /* font-size: 60px; */
     font-size: 6rem;
@@ -89,7 +89,7 @@ body{
     */
     
 }
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
     /* font-size: 20px; */
     font-size: 2rem;
@@ -177,7 +177,7 @@ body{
     transform:translateY(-1px);
     box-shadow:0 .5rem 1rem rgba(0,0,0,.2); /*x, y, blur,color*/
 }
-.btn-white {
+.btn--white {
     background-color:#fff;
     color:#777;
 }
@@ -193,14 +193,14 @@ body{
     z-index:-1; /*So remember the z index defines the position  of the elements if they are one on top of another. And so this one has minus one and so it's definitely behind the button.*/
     transition:all .4s;
 }
-.btn-white::after{
+.btn--white::after{
     background-color:#fff;
 }
 .btn:hover::after{ /*So this is an after pseudo-element only when we have the button on the hover state.*/
     transform:scaleX(1.4) scaleY(1.6);
     opacity:0;
 }
-.btn-animated{
+.btn--animated{
     animation:moveInBottom .5s ease-out .5s ;
     animation-fill-mode: backwards;
 }
