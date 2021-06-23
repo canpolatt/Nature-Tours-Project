@@ -1,0 +1,18 @@
+//partial sass file
+
+/* Universal Selector */
+*,
+*::after,
+*::before { 
+    margin:0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    /* font-size:10px; We know that 1 rem exactly 10px Because, 1 rem is exactly the root font-size */
+    //This defines what 1rem is
+    font-size: 62.5%; /*tek bir yerden yönetebiliriz // media querylerde hayat kurtarıcı!!*/    
+}
+body{
+    box-sizing: border-box;
+  }

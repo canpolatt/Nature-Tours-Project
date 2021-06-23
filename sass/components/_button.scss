@@ -1,0 +1,51 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s; /*geçiş*/
+    position: relative;
+    font-size: 1.6rem;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /*x, y, blur,color*/
+  }
+  &:active {
+    /* click */
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /*x, y, blur,color*/
+  }
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+  }
+  &::after {
+    /*behave like btn child*/
+    content: ""; /*  We have to specify it. Otherwise it's not going to appear. */
+    display: inline-block;
+    height: 100%; /* exact same dimensions with btn if we set it to 100%*/
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /*So remember the z index defines the position  of the elements if they are one on top of another. And so this one has minus one and so it's definitely behind the button.*/
+    transition: all 0.4s;
+  }
+  &--white::after {
+    background-color: $color-white;
+  }
+  &:hover::after {
+    /*So this is an after pseudo-element only when we have the button on the hover state.*/
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.5s;
+    animation-fill-mode: backwards;
+  }
+}

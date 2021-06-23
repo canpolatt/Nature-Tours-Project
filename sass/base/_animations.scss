@@ -1,0 +1,56 @@
+@keyframes moveInLeft {
+    /* We can specify what I want to happen in each moment of time of the animation.
+    So we start with 0% which is before the animation actually starts.
+    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+
+    0% { /* animation start // initial state*/
+        opacity:0;
+        transform: translateX(-10rem); /*So a positive value means it goes to the right, and negative value means it goes to the left.*/
+    }
+
+    80% {
+        transform:translateX(1rem);
+    }
+
+    100% {  /* animation finish // final state*/
+        opacity:1;
+        transform: translate(0)
+    }
+}
+
+@keyframes moveInRight {
+    /* We can specify what I want to happen in each moment of time of the animation.
+    So we start with 0% which is before the animation actually starts.
+    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+
+    0% { /* animation start // initial state*/
+        opacity: 0;
+        transform: translateX(10rem); /*So a positive value means it goes to the right, and negative value means it goes to the left.*/
+    }
+    80% {
+        transform:translateX(-1rem);
+    }
+
+    100% {  /* animation finish // final state*/
+        opacity:1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInBottom {
+    /* We can specify what I want to happen in each moment of time of the animation.
+    So we start with 0% which is before the animation actually starts.
+    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+
+    0% { /* animation start // initial state*/
+        opacity: 0;
+        transform: translateY(3rem); /*So a positive value means it goes to the right, and negative value means it goes to the left.*/
+    }
+    80% {
+        transform:translateY(-1rem);
+    }
+
+    100% {  /* animation finish // final state*/
+        opacity:1;
+        transform: translate(0);
+    }
+}

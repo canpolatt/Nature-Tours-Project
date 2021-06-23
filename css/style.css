@@ -1,79 +1,87 @@
-/*
-COLORS:
+@charset "UTF-8";
+@keyframes moveInLeft {
+  /* We can specify what I want to happen in each moment of time of the animation.
+    So we start with 0% which is before the animation actually starts.
+    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+  0% {
+    /* animation start // initial state*/
+    opacity: 0;
+    transform: translateX(-10rem);
+    /*So a positive value means it goes to the right, and negative value means it goes to the left.*/ }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    /* animation finish // final state*/
+    opacity: 1;
+    transform: translate(0); } }
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+@keyframes moveInRight {
+  /* We can specify what I want to happen in each moment of time of the animation.
+    So we start with 0% which is before the animation actually starts.
+    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+  0% {
+    /* animation start // initial state*/
+    opacity: 0;
+    transform: translateX(10rem);
+    /*So a positive value means it goes to the right, and negative value means it goes to the left.*/ }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    /* animation finish // final state*/
+    opacity: 1;
+    transform: translate(0); } }
 
-*/
+@keyframes moveInBottom {
+  /* We can specify what I want to happen in each moment of time of the animation.
+    So we start with 0% which is before the animation actually starts.
+    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+  0% {
+    /* animation start // initial state*/
+    opacity: 0;
+    transform: translateY(3rem);
+    /*So a positive value means it goes to the right, and negative value means it goes to the left.*/ }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    /* animation finish // final state*/
+    opacity: 1;
+    transform: translate(0); } }
 
 /* Universal Selector */
 *,
 *::after,
-*::before { 
-    margin:0;
-    padding: 0;
-    box-sizing: inherit;
-}
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
 html {
-    /* font-size:10px; We know that 1 rem exactly 10px Because, 1 rem is exactly the root font-size */
-    font-size: 62.5%; /*tek bir yerden yönetebiliriz // media querylerde hayat kurtarıcı!!*/
-    
-    
-}
-body{
-    font-family:"Lato",sans-serif;
-    font-weight: 400;
-    /*font-size: 16px;*/
-    font-size:1.6rem;
-    line-height: 1.7;
-    color: #777;
-    padding: 3rem; /*not getting inherited*/
-    box-sizing: border-box;
-   
-}
-.header{
-    height: 95vh;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(126,213,111,0.8),
-        rgba(40,180,131,0.8)),
-        url(../img/hero.jpg);
-    background-size: cover;
-    background-position: top;  /*always stays at the top of the container// bottom-croped*/
-    position: relative;
-    clip-path:polygon(0 0 , 100% 0, 100% 75%,0 100%); /* clock-wise*/
-}
+  /* font-size:10px; We know that 1 rem exactly 10px Because, 1 rem is exactly the root font-size */
+  font-size: 62.5%;
+  /*tek bir yerden yönetebiliriz // media querylerde hayat kurtarıcı!!*/ }
 
-.header__logo-box {
-    position: absolute;
-    top:4rem;
-    left: 4rem;
-    
-}
-.header__logo {
-    height: 3.5rem;
+body {
+  box-sizing: border-box; }
 
-}
+body {
+  font-family: "Lato",sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /*not getting inherited*/ }
 
-.header__text-box{
-    position:absolute;
-    top:40%;
-    left:50%;
-    transform: translate(-50%,-50%);/* x,y */
-    text-align: center;
-
-}
 .heading-primary {
-    color:#fff;
-    text-transform: uppercase;
-    /* So it's a bit shaky, and its the entire heading-primary element.
-    This backface-visibility property determines if the back part of the element when we transform it
-    is visible or hidden for the user. */
-    backface-visibility: hidden;  
-    margin-bottom: 6rem;
-}
-.heading-primary--main{
+  color: #fff;
+  text-transform: uppercase;
+  /* So it's a bit shaky, and its the entire heading-primary element.
+      This backface-visibility property determines if the back part of the element when we transform it
+      is visible or hidden for the user. */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
     display: block;
     /* font-size: 60px; */
     font-size: 6rem;
@@ -81,126 +89,92 @@ body{
     letter-spacing: 3.5rem;
     animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-out; 
-
+    animation-timing-function: ease-out;
     /*
-    animation-delay: 3s;
-    animation-iteration-count: 3;
-    */
-    
-}
-.heading-primary--sub{
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */ }
+  .heading-primary--sub {
     display: block;
     /* font-size: 20px; */
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-    
-}
+    animation: moveInRight 1s ease-out; }
 
-@keyframes moveInLeft {
-    /* We can specify what I want to happen in each moment of time of the animation.
-    So we start with 0% which is before the animation actually starts.
-    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  /*geçiş*/
+  position: relative;
+  font-size: 1.6rem; }
 
-    0% { /* animation start // initial state*/
-        opacity:0;
-        transform: translateX(-10rem); /*So a positive value means it goes to the right, and negative value means it goes to the left.*/
-    }
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /*x, y, blur,color*/ }
 
-    80% {
-        transform:translateX(1rem);
-    }
+.btn:active {
+  /* click */
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  /*x, y, blur,color*/ }
 
-    100% {  /* animation finish // final state*/
-        opacity:1;
-        transform: translate(0)
-    }
-}
-
-@keyframes moveInRight {
-    /* We can specify what I want to happen in each moment of time of the animation.
-    So we start with 0% which is before the animation actually starts.
-    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
-
-    0% { /* animation start // initial state*/
-        opacity: 0;
-        transform: translateX(10rem); /*So a positive value means it goes to the right, and negative value means it goes to the left.*/
-    }
-    80% {
-        transform:translateX(-1rem);
-    }
-
-    100% {  /* animation finish // final state*/
-        opacity:1;
-        transform: translate(0);
-    }
-}
-@keyframes moveInBottom {
-    /* We can specify what I want to happen in each moment of time of the animation.
-    So we start with 0% which is before the animation actually starts.
-    So this can also be called start. Then the finish is at 100%, which is when the animation finishes. */
-
-    0% { /* animation start // initial state*/
-        opacity: 0;
-        transform: translateY(3rem); /*So a positive value means it goes to the right, and negative value means it goes to the left.*/
-    }
-    80% {
-        transform:translateY(-1rem);
-    }
-
-    100% {  /* animation finish // final state*/
-        opacity:1;
-        transform: translate(0);
-    }
-}
-
-
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding:1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s ; /*geçiş*/
-    position:relative;
-    font-size: 1.6rem;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 1rem 2rem rgba(0,0,0,.2); /*x, y, blur,color*/
-}
-.btn:active{ /* click */
-    transform:translateY(-1px);
-    box-shadow:0 .5rem 1rem rgba(0,0,0,.2); /*x, y, blur,color*/
-}
 .btn--white {
-    background-color:#fff;
-    color:#777;
-}
-.btn::after{ /*behave like btn child*/
-    content:""; /*  We have to specify it. Otherwise it's not going to appear. */
-    display:inline-block;
-    height:100%; /* exact same dimensions with btn if we set it to 100%*/
-    width:100%;
-    border-radius:10rem;
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:-1; /*So remember the z index defines the position  of the elements if they are one on top of another. And so this one has minus one and so it's definitely behind the button.*/
-    transition:all .4s;
-}
-.btn--white::after{
-    background-color:#fff;
-}
-.btn:hover::after{ /*So this is an after pseudo-element only when we have the button on the hover state.*/
-    transform:scaleX(1.4) scaleY(1.6);
-    opacity:0;
-}
-.btn--animated{
-    animation:moveInBottom .5s ease-out .5s ;
-    animation-fill-mode: backwards;
-}
+  background-color: #fff;
+  color: #777; }
+
+.btn::after {
+  /*behave like btn child*/
+  content: "";
+  /*  We have to specify it. Otherwise it's not going to appear. */
+  display: inline-block;
+  height: 100%;
+  /* exact same dimensions with btn if we set it to 100%*/
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /*So remember the z index defines the position  of the elements if they are one on top of another. And so this one has minus one and so it's definitely behind the button.*/
+  transition: all 0.4s; }
+
+.btn--white::after {
+  background-color: #fff; }
+
+.btn:hover::after {
+  /*So this is an after pseudo-element only when we have the button on the hover state.*/
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.5s;
+  animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*always stays at the top of the container// bottom-croped*/
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /* clock-wise*/ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* x,y */
+    text-align: center; }
