@@ -9,6 +9,7 @@
     background-size: cover;
     background-position: top; /*always stays at the top of the container// bottom-croped*/
     position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /* clock-wise*/
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /* clock-wise*/
     &__logo-box {
       position: absolute;
