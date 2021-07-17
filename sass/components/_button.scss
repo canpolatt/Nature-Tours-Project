@@ -22,7 +22,20 @@
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
+  }  
+  &--white::after {
+    background-color: $color-white;
   }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+  }  
+  &--green::after {
+    background-color: $color-primary;
+  }
+
+
   &::after {
     /*behave like btn child*/
     content: ""; /*  We have to specify it. Otherwise it's not going to appear. */
@@ -36,9 +49,7 @@
     z-index: -1; /*So remember the z index defines the position  of the elements if they are one on top of another. And so this one has minus one and so it's definitely behind the button.*/
     transition: all 0.4s;
   }
-  &--white::after {
-    background-color: $color-white;
-  }
+
   &:hover::after {
     /*So this is an after pseudo-element only when we have the button on the hover state.*/
     transform: scaleX(1.4) scaleY(1.6);
