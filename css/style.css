@@ -1,4 +1,25 @@
 @charset "UTF-8";
+/*
+0 - 600px:  Phone
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+[1200 - 1800] is where our normal styles apply
+
+1800px + : Big desktop
+
+
+
+*/
+/*
+breakpoint argument choices: 
+- phone 
+- tab-port 
+- tab-land 
+- big-desktop
+
+
+1em=16px
+*/
 @keyframes moveInLeft {
   /* We can specify what I want to happen in each moment of time of the animation.
     So we start with 0% which is before the animation actually starts.
@@ -59,6 +80,15 @@ html {
   /* font-size:10px; We know that 1 rem exactly 10px Because, 1 rem is exactly the root font-size */
   font-size: 62.5%;
   /*tek bir yerden yönetebiliriz // media querylerde hayat kurtarıcı!!*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
