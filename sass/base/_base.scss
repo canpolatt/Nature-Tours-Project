@@ -38,4 +38,9 @@ html {
 }
 body{
     box-sizing: border-box;
+    padding: 3rem; /*not getting inherited*/
+
+    @include respond(tab-port){ // width < 900 ?
+        padding: 0;
+    }
   }
